@@ -1,20 +1,44 @@
-import { Col, Container } from 'react-bootstrap';
+'use client';
 
-/** The Footer appears at the bottom of every page. Rendered by the App Layout component. */
-const Footer = () => (
-  <footer className="mt-auto py-3 bg-light">
+import { Container, Row, Col, Nav, Image } from 'react-bootstrap';
+import { Facebook, Instagram, Twitter, Yelp } from 'react-bootstrap-icons';
+
+const BottomMenu = (): JSX.Element => (
+  <div className="bg-dark footer mt-auto">
     <Container>
-      <Col className="text-center">
-        Department of Information and Computer Sciences
-        <br />
-        University of Hawaii
-        <br />
-        Honolulu, HI 96822
-        <br />
-        <a href="http://ics-software-engineering.github.io/nextjs-application-template">Template Home Page</a>
-      </Col>
+      <Row className="py-3">
+        <Col xs={6}>
+          <Image src="/wod-ko-hana-logo.png" alt="Kō Hana Logo" width="200" />
+          <Row>
+            <Nav>
+              <Nav.Link href="#">ALOHA@KOHANARUM.COM</Nav.Link>
+              <Nav.Link href="#">(808) 649-0830</Nav.Link>
+              <Nav.Link href="#">
+                92-1770 Kunia Rd., #227, Kunia, HI 96759, USA
+              </Nav.Link>
+            </Nav>
+          </Row>
+        </Col>
+        <Col xs={2}></Col>
+        <Col className="rightCol justify-content-end">
+          <Row>
+            <Nav className="justify-content-end">
+              <Nav.Link href="#"><Instagram size={30} /></Nav.Link>
+              <Nav.Link href="#"><Facebook size={30} /></Nav.Link>
+              <Nav.Link href="#"><Twitter size={30} /></Nav.Link>
+              <Nav.Link href="#"><Yelp size={30} /></Nav.Link>
+            </Nav>
+          </Row>
+          <Row>
+            <Nav className="justify-content-end">
+              <Nav.Link href="#">TERMS & CONDITIONS</Nav.Link>
+              <Nav.Link href="#">PRIVACY POLICY</Nav.Link>
+            </Nav>
+          </Row>
+        </Col>
+      </Row>
     </Container>
-  </footer>
+  </div>
 );
 
-export default Footer;
+export default BottomMenu;
